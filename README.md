@@ -1,16 +1,16 @@
-## Git
+### Git
 git config --global user.name "RomainCrispini"
 git config --global user.email "romain.crispini@gmail.com"
 git init
 
-## Composer
+### Composer
 composer install
 composer update
 
-## Docker
+### Docker
 symfony console make:docker:database
 
-## Pré-requis
+### Pré-requis
 
 * PHP 7.4
 * Composer
@@ -19,9 +19,13 @@ symfony console make:docker:database
 * Docker
 * docker-compose
 
-## Vérification
+### Vérification
 symfony check:requirements
 
-# On lance l'ensemble des containers puis on lance un serveur sur Docker (env dev)
+### On lance l'ensemble des containers puis on lance un serveur sur Docker (env dev)
 docker-compose up -d
 symfony serve -d
+
+## Erreur potentielle
+Dans composer.json, downgrade 2.12 vers 2.11 : "doctrine/orm": "^2.11" et ajouter dans conflits "doctrine/orm": "^2.12"
+Puis composer update
