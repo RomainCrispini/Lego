@@ -26,6 +26,16 @@ symfony check:requirements
 docker-compose up -d
 symfony serve -d
 
-## Erreur potentielle
+### Erreur potentielle
 Dans composer.json, downgrade 2.12 vers 2.11 : "doctrine/orm": "^2.11" et ajouter dans conflits "doctrine/orm": "^2.12"
 Puis composer update
+
+### Installation WebPack Encore + 2 dépendances
+composer require symfony/webpack-encore-bundle
+npm install
+npm install postcss-loader autoprefixer --dev
+Et on crée un fichier postcss.config.js
+
+### Installation Bootstrap 5
+npm install bootstrap@next
+npm install @popperjs/core
